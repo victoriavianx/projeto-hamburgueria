@@ -1,3 +1,5 @@
+import "./Product.css";
+
 const Product = ({ product, handleClick }) => {
   const { img, name, category, price, id } = product;
 
@@ -9,8 +11,10 @@ const Product = ({ product, handleClick }) => {
   };
 
   return (
-    <li>
-      <img src={img} alt={name} />
+    <li className="productCard">
+      <figure>
+        <img src={img} alt={name} />
+      </figure>
       <h2>{name}</h2>
       <span>{category}</span>
       <p>{formatCurrency(price)}</p>
