@@ -1,9 +1,10 @@
 import Product from "../Product/Product";
+import "./ProductsList.css";
 
-const ProductsList = ({ products, handleClick }) => {
+const ProductsList = ({ filteredProducts, handleClick }) => {
   return (
-    <ul>
-      {products.map((product, index) => (
+    <ul className="productContainer">
+      {filteredProducts.map((product, index) => (
         <Product product={product} key={index} handleClick={handleClick} />
       ))}
     </ul>
