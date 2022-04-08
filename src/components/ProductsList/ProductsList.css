@@ -1,0 +1,16 @@
+.productContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+@media (min-width: 768px) {
+  .productContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 39px;
+    margin-left: 5vw;
+    margin-right: 7vw;
+  }
+}
