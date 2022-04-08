@@ -12,18 +12,21 @@ const Header = ({ showProducts }) => {
 
   return (
     <>
-      <figure>
+      <figure className="logo">
         <img src={Logo} alt="logo-burguer-kenzie" />
       </figure>
-      <form onSubmit={handleSubmit}>
+      <form className="searchInput" onSubmit={handleSubmit}>
         <input
           name="searchProduct"
+          className="searchProduct"
           type="text"
           placeholder="Digitar Pesquisa"
           value={searchInput}
           onChange={(event) => setSearchInput(event.target.value)}
         />
-        <button type="submit">Pesquisar</button>
+        <button className="buttonSearch" type="submit">
+          Pesquisar
+        </button>
       </form>
     </>
   );
