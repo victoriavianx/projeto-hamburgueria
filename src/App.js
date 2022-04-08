@@ -18,6 +18,7 @@ const App = () => {
       const dataResponse = await response.json();
 
       setProducts(dataResponse);
+      setFilteredProducts(dataResponse);
     }
 
     getProducts();
@@ -30,10 +31,18 @@ const App = () => {
       const productCategory = category.toLowerCase();
       const search = searchInput.toLowerCase();
 
-      return productName === search || productCategory === search;
+      return productName.includes(search) || productCategory.includes(search);
     });
 
     setFilteredProducts(filterProducts);
+  };
+
+  const removeProduct = (removeItem) => {
+    const removedProduct = currentSale.filter(
+      (product) => product !== removeItem
+    );
+
+    setCurrentSale(removedProduct);
   };
 
   const handleClick = (productId) => {
@@ -47,12 +56,19 @@ const App = () => {
       <header className="topContainer">
         <Header showProducts={showProducts} />
       </header>
-      <main>
-        <section>
-          <ProductsList products={products} handleClick={handleClick} />
+      <main className="mainContainer">
+        <section className="sectionContainer">
+          <ProductsList
+            filteredProducts={filteredProducts}
+            handleClick={handleClick}
+          />
         </section>
-        <aside>
-          <Cart currentSale={currentSale} />
+        <aside className="asideContainer">
+          <Cart
+            currentSale={currentSale}
+            setCurrentSale={setCurrentSale}
+            removeProduct={removeProduct}
+          />
         </aside>
       </main>
     </>
