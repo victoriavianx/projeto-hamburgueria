@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { GlobalStyles } from "./styles/global";
 import Header from "./components/Header/Header";
 import ProductsList from "./components/ProductsList/ProductsList";
 import Cart from "./components/Cart/Cart";
@@ -53,6 +54,7 @@ const App = () => {
 
   return (
     <>
+      <GlobalStyles />
       <header className="topContainer">
         <Header showProducts={showProducts} />
       </header>
