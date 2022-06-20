@@ -1,10 +1,21 @@
+import { useCart } from "../../providers/cart/cart";
 import CartProduct from "../CartProduct/CartProduct";
 import "./Cart.css";
 
-const Cart = ({ currentSale, setCurrentSale, removeProduct }) => {
+const Cart = () => {
+  const { currentSale, setCurrentSale } = useCart();
+
   const totalPrice = currentSale.reduce((acc, currentValue) => {
     return acc + Number(currentValue.price);
   }, 0);
+
+  const removeProduct = (removeItem) => {
+    const removedProduct = currentSale.filter(
+      (product) => product !== removeItem
+    );
+
+    setCurrentSale(removedProduct);
+  };
 
   const formatCurrency = (number) => {
     return Number(number).toLocaleString("pt-br", {
