@@ -1,11 +1,9 @@
-import { useState } from "react";
 import Header from "../../components/Header/Header";
 import ProductsList from "../../components/ProductsList/ProductsList";
+import DrawerCart from "../../components/DrawerCart/drawer";
 import { Container, Main } from "./styles";
 
 const Home = () => {
-  const [isDrawerVisible, setIsDrawerVisible] = useState(false);
-
   return (
     <>
       <Header />
@@ -13,6 +11,7 @@ const Home = () => {
         <Container>
           <ProductsList />
         </Container>
+        <DrawerCart />
       </Main>
     </>
   );
