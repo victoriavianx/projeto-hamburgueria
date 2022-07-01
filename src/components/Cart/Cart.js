@@ -5,12 +5,16 @@ import "./Cart.css";
 const Cart = () => {
   const { currentSale, setCurrentSale } = useCart();
 
-  const removeProduct = (removeItem) => {
-    const removedProduct = currentSale.filter(
-      (product) => product !== removeItem
+  const removeProduct = (event) => {
+    const removeItem = event.target.id;
+
+    const productIndex = currentSale.findIndex(
+      (product) => product.id === removeItem
     );
 
-    setCurrentSale(removedProduct);
+    currentSale.splice(productIndex, 1);
+
+    setCurrentSale([...currentSale]);
   };
 
   return (
@@ -24,7 +28,6 @@ const Cart = () => {
               removeProduct={removeProduct}
             />
           ))}
-          <div className="bottomCart"></div>
         </ul>
       ) : (
         <>

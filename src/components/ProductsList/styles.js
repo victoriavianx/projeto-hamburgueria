@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.ul`
   width: 100%;
-  margin: 1rem auto;
+  margin: 1rem 1rem 1rem 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   overflow-x: auto;
   max-width: 90vw;
-  background-color: #ff8716;
   border-radius: 8px;
+  scroll-snap-type: x mandatory;
 
   ::-webkit-scrollbar {
     height: 10px;
@@ -29,11 +29,10 @@ export const Container = styled.ul`
     flex-wrap: wrap;
     margin: auto;
     max-width: 675px;
-    background-color: #ffdeb3;
   }
 
   @media (min-width: 1024px) {
-    margin: 0;
+    margin: 0 0 3rem 0;
     width: 100%;
     max-width: 900px;
   }

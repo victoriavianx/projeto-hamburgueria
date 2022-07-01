@@ -4,10 +4,14 @@ import { useCart } from "../../providers/cart/cart";
 
 const Product = ({ product }) => {
   const { products, currentSale, setCurrentSale } = useCart();
-  const { img, name, category, price, id } = product;
+  let { img, name, category, price, id } = product;
 
   const handleClick = (productId) => {
     const findProductId = products.find((product) => productId === product.id);
+
+    products.map((product) => {
+      return (product.quantity = 1);
+    });
 
     setCurrentSale([...currentSale, findProductId]);
   };

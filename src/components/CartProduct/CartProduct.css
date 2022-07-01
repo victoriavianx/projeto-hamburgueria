@@ -11,7 +11,7 @@
   height: 80px;
   margin: 0 0 0 2vw;
   border-radius: 5px;
-  background-color: #e0e0e0;
+  background-color: #fbd38d;
 }
 
 .cartProduct figure img {
@@ -21,36 +21,64 @@
 }
 
 .cartProduct p {
-  width: 170px;
+  width: 120px;
   margin: 0 0 5px 10px;
   font-size: 18px;
   font-weight: 700;
-  color: #333333;
+  color: #342220;
 }
 
 .cartProduct span {
   margin-left: 10px;
   font-size: 12px;
   font-weight: 400;
-  color: #828282;
+  color: #342220;
 }
 
 .cartProduct button {
-  margin-right: 18px;
-  font-size: 12px;
+  padding-left: 0.5rem;
+  padding-right: 18px;
+  font-size: 18px;
   border: 0;
   background-color: transparent;
-  color: #bdbdbd;
+  color: #ed8936;
 }
 
 .cartProduct button:hover {
   color: #333333;
 }
 
+#counterBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 40px;
+}
+
+#counterBox button {
+  padding: 0;
+}
+
+#counterBox button svg {
+  width: 20px;
+  margin: 0.5rem 0.7rem;
+  padding: 0;
+}
+
+#counterBox span {
+  font-weight: 700;
+  margin: 0 1rem;
+}
+
+@media (min-width: 425px) {
+  .cartProduct p {
+    width: 150px;
+  }
+}
+
 @media (min-width: 768px) {
   .cartProduct {
-    width: 50vw;
-
     justify-content: center;
   }
 
@@ -66,11 +94,12 @@
     margin: 0 0 5px 0;
   }
 
-  .cartProduct span {
-    margin-left: 0;
-  }
-
   .cartProduct button {
     margin: 0;
+    font-size: 25px;
+  }
+
+  #counterBox {
+    margin-right: 1rem;
   }
 }

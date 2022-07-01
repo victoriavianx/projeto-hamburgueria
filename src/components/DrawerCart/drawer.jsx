@@ -20,7 +20,7 @@ const DrawerCart = () => {
   const btnRef = useRef();
 
   const totalPrice = currentSale.reduce((acc, currentValue) => {
-    return acc + Number(currentValue.price);
+    return acc + Number(currentValue.price * currentValue.quantity);
   }, 0);
 
   const formatCurrency = (number) => {
@@ -28,10 +28,6 @@ const DrawerCart = () => {
       style: "currency",
       currency: "BRL",
     });
-  };
-
-  const removeAllProduct = () => {
-    setCurrentSale([]);
   };
 
   return (
@@ -47,18 +43,30 @@ const DrawerCart = () => {
         size={"sm"}
       >
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent backgroundColor={"orange.100"} color={"#342220"}>
           <DrawerCloseButton />
           <DrawerHeader>Carrinho de Compras</DrawerHeader>
 
-          <DrawerBody>
+          <DrawerBody
+            overflow={"auto"}
+            display={"flex"}
+            flexDirection={"column"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
             <Cart />
           </DrawerBody>
 
-          <DrawerFooter>
-            <p>Total</p>
+          <DrawerFooter
+            width={"100%"}
+            height={"80px"}
+            color={"#342220"}
+            fontWeight={"600"}
+            backgroundColor={"#27ae60"}
+            justifyContent={"space-evenly"}
+          >
+            <p style={{ marginRight: "10rem" }}>Total</p>
             <span>{formatCurrency(totalPrice)}</span>
-            <button onClick={removeAllProduct}>Remover Todos</button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

@@ -9,16 +9,26 @@ export const Container = styled.li`
   border: 2px solid #342220;
   border-radius: 8px;
   color: #342220;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  transition: 0.5s;
 
   div {
-    width: 55vw;
+    width: 70vw;
 
     h2 {
-      font-size: 24px;
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 10px;
       margin-bottom: 10px;
     }
 
+    span {
+      font-size: 14px;
+    }
+
     p {
+      font-weight: 700;
       margin: 10px 0;
     }
 
@@ -27,26 +37,35 @@ export const Container = styled.li`
       height: 30px;
       background-color: #27ae60;
       border-radius: 8px;
-      margin: 5px 0;
+      margin: 10px 0;
+
+      :hover {
+        background-color: #27ae40;
+      }
 
       svg {
-        margin-top: 4px;
+        margin: 0 0.9rem;
         font-size: 17px;
         color: #fff;
       }
     }
   }
 
-  @media (min-width: 321px) {
+  :hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+
+  @media (min-width: 375px) {
     div {
-      width: 40vw;
+      width: 60vw;
       max-width: 225px;
     }
   }
 
   @media (min-width: 768px) {
     div {
-      width: 200px;
+      width: 250px;
 
       button {
         margin-bottom: 10px;
@@ -60,10 +79,8 @@ export const Box = styled.figure`
   width: 100%;
 `;
 
-// #ff8716
-
 export const Img = styled.img`
-  width: 7rem;
-  height: 7rem;
+  width: 8rem;
+  height: 8rem;
   margin: auto;
 `;

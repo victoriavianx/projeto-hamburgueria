@@ -20,10 +20,13 @@ export const BoxLogo = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+  max-width: 1024px;
 
   h1 {
     margin-left: 10px;
-    color: #ffdeb3;
+    font-size: 25px;
+    font-weight: 700;
+    color: #fbd38d;
   }
 
   @media (min-width: 768px) {
@@ -56,13 +59,18 @@ export const BoxSearch = styled.form`
   }
 
   button {
-    width: 23vw;
+    width: 26vw;
     height: 35px;
     margin: 5px 5px 5px 0;
     color: #fff;
     background-color: /*#7cd164*/ #27ae60;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    transition: 0.5s;
+
+    :hover {
+      background-color: #27ae40;
+    }
   }
 
   @media (min-width: 425px) {
@@ -76,13 +84,11 @@ export const BoxSearch = styled.form`
 `;
 
 export const Sandwich = styled.div`
-  width: 100vw;
   height: 10px;
   background-color: ${(props) => (props.cheese ? "#fecd23" : "#27ae60")};
 `;
 
 export const SandwichTomato = styled.div`
-  width: 100vw;
   height: 10px;
   background-color: #fc370c;
 `;
