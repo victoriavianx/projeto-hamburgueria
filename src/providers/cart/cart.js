@@ -8,6 +8,7 @@ export const CartProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState([]);
+  const [counter, setCounter] = useState(1);
 
   const getProducts = () => {
     axios
@@ -24,6 +25,10 @@ export const CartProvider = ({ children }) => {
     getProducts();
   }, []);
 
+  products.map((product) => {
+    return (product.quantity = counter);
+  });
+
   return (
     <CartContext.Provider
       value={{
@@ -32,6 +37,8 @@ export const CartProvider = ({ children }) => {
         setFilteredProducts,
         currentSale,
         setCurrentSale,
+        counter,
+        setCounter,
       }}
     >
       {children}
