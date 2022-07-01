@@ -11,7 +11,6 @@ export const GlobalStyles = createGlobalStyle`
     html, body {
         width: 100%;
         height: 100%;
-        background-color: #ffdeb3;
     }
 
     body::-webkit-scrollbar {
@@ -24,8 +23,8 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body::-webkit-scrollbar-thumb {
-        background-color: #ff8716;    
-        border-radius: 10px;      
+        background-color: #342220;    
+        border-radius: 8px;      
     }
 
     li {
