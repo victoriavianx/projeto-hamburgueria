@@ -1,4 +1,5 @@
 import { useCart } from "../../providers/cart/cart";
+import { toast } from "react-toastify";
 import CartProduct from "../CartProduct/CartProduct";
 import "./Cart.css";
 
@@ -14,6 +15,7 @@ const Cart = () => {
 
     currentSale.splice(productIndex, 1);
 
+    toast.success("Produto removido do carrinho");
     setCurrentSale([...currentSale]);
   };
 

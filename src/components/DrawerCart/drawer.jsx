@@ -15,12 +15,12 @@ import { Button } from "./styles";
 import Cart from "../Cart/Cart";
 
 const DrawerCart = () => {
-  const { currentSale, setCurrentSale } = useCart();
+  const { currentSale } = useCart();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
 
   const totalPrice = currentSale.reduce((acc, currentValue) => {
-    return acc + Number(currentValue.price * currentValue.quantity);
+    return acc + Number(currentValue.price) * Number(currentValue.quantity);
   }, 0);
 
   const formatCurrency = (number) => {

@@ -1,19 +1,25 @@
 import { Box, Container, Img } from "./styles";
 import { FiShoppingCart } from "react-icons/fi";
 import { useCart } from "../../providers/cart/cart";
+import { toast } from "react-toastify";
 
 const Product = ({ product }) => {
   const { products, currentSale, setCurrentSale } = useCart();
   let { img, name, category, price, id } = product;
 
   const handleClick = (productId) => {
-    const findProductId = products.find((product) => productId === product.id);
+    const foundProduct = products.find((product) => productId === product.id);
+    const productAlreadyExists = currentSale.find(
+      (product) => productId === product.id
+    );
 
-    products.map((product) => {
-      return (product.quantity = 1);
-    });
-
-    setCurrentSale([...currentSale, findProductId]);
+    if (productAlreadyExists) {
+      toast.info("Produto já adicionado no carrinho");
+      setCurrentSale([...currentSale]);
+    } else {
+      toast.success("Produto adicionado no carrinho");
+      setCurrentSale([...currentSale, foundProduct]);
+    }
   };
 
   const formatCurrency = (number) => {
