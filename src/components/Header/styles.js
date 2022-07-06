@@ -43,7 +43,7 @@ export const BoxSearch = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80vw;
+  width: 75vw;
   height: 45px;
   border-radius: 15px;
   background-color: #fecd23 /**/;
