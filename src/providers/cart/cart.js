@@ -8,7 +8,7 @@ export const CartProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState(
-    JSON.parse(localStorage.getItem("@Burguer:cart"))
+    JSON.parse(localStorage.getItem("@Burguer:cart")) || []
   );
   const [counter, setCounter] = useState(1);
 

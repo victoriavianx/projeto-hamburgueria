@@ -15,7 +15,7 @@ import { Button } from "./styles";
 import Cart from "../Cart/Cart";
 
 const DrawerCart = () => {
-  const { currentSale } = useCart();
+  const currentSale = JSON.parse(localStorage.getItem("@Burguer:cart")) || [];
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
 
