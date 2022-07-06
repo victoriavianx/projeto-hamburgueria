@@ -4,7 +4,8 @@ import CartProduct from "../CartProduct/CartProduct";
 import "./Cart.css";
 
 const Cart = () => {
-  const { currentSale, setCurrentSale } = useCart();
+  const { setCurrentSale } = useCart();
+  const currentSale = JSON.parse(localStorage.getItem("@Burguer:cart"));
 
   const removeProduct = (event) => {
     const removeItem = event.target.id;

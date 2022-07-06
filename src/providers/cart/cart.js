@@ -7,8 +7,12 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [currentSale, setCurrentSale] = useState([]);
+  const [currentSale, setCurrentSale] = useState(
+    JSON.parse(localStorage.getItem("@Burguer:cart"))
+  );
   const [counter, setCounter] = useState(1);
+
+  localStorage.setItem("@Burguer:cart", JSON.stringify(currentSale));
 
   const getProducts = () => {
     axios
